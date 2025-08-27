@@ -15,11 +15,7 @@
     "cy:run:happy":"cypress run --spec cypress/e2e/purgomalum-HappyPath.cy.ts",
     "cy:run:unHappy":"cypress run --spec cypress/e2e/purgomalum-UnHappyPath.cy.ts",
      "//":"ci",
-     "test:ci": "cypress run --headless --browser chrome",
-     "k6:run": "k6 run LoadTests/simple-load.js"
-
-
-
+     "test:ci": "cypress run --headless --browser chrome"
   },
   "keywords": ["Cypress", "Typescript", "API", "Automation"],
   "author": "Parita Patel",
