@@ -1,16 +1,29 @@
 name: E2E (Cypress)
 
 on:
+  workflow_dispatch:          # manual “Run workflow” button
   pull_request:
-  push:
-    branches: [ main ]
+    branches: [ "**" ]
     paths:
+      - ".github/**"
       - "cypress/**"
       - "package.json"
       - "package-lock.json"
       - "cypress.config.*"
       - "**/*.ts"
       - "**/*.js"
+      - "README.md"
+  push:
+    branches: [ "**" ]
+    paths:
+      - ".github/**"
+      - "cypress/**"
+      - "package.json"
+      - "package-lock.json"
+      - "cypress.config.*"
+      - "**/*.ts"
+      - "**/*.js"
+      - "README.md"
 
 concurrency:
   group: cypress-${{ github.ref }}
@@ -25,7 +38,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: npm
       - run: npm ci
       - name: Run Cypress (headless, Chrome) + build report
         run: npm run test:ci
