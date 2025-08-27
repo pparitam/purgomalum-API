@@ -1,0 +1,38 @@
+{
+  "name": "purgomalum-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "//":"Execute tests in Headed mode",
+    "cy:open": "cypress open",
+    "cy:open:win": "node_modules/.bin/cypress open",
+    
+    "//":"Execute tests in headless mode",
+    "cy:run": "cypress run",
+    "cy:run:win": "node_modules/.bin/cypress run",
+    "//":"Execute Spec separately",
+    "cy:run:happy":"cypress run --spec cypress/e2e/purgomalum-HappyPath.cy.ts",
+    "cy:run:unHappy":"cypress run --spec cypress/e2e/purgomalum-UnHappyPath.cy.ts",
+     "//":"ci",
+     "test:ci": "cypress run --headless --browser chrome",
+     "k6:run": "k6 run LoadTests/simple-load.js"
+
+
+
+  },
+  "keywords": ["Cypress", "Typescript", "API", "Automation"],
+  "author": "Parita Patel",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "cypress": "^15.0.0",
+    "cypress-mochawesome-reporter": "^3.8.4",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  }
+}

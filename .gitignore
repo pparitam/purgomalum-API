@@ -1,0 +1,8 @@
+#foldername
+node_modules
+
+#reports 
+cypress/reports/*
+
+#screenshots 
+cypress/screenshots/*
